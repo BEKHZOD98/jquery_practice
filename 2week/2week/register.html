@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/webstyle.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/app.js" defer></script>
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*window.onload = function(event){
+            var log = document.getElementById("log");
+            log.addEventListener("click", regist);
+            var print1 = document.getElementById("print1");
+            print1 = document.addEventListener("click",printA);
+            
+        }*/
+       /* $(
+            function(event){
+            var log = document.getElementById("log");
+            log.addEventListener("click", regist);
+            var print1 = document.getElementById("print1");
+            print1 = document.addEventListener("click",printA);
+            }
+            );*/
+    </script>
+    <h1 class="header">회원가입</h1>
+    <form action="" class="from1">
+        이름: <input type="text" id="na" ><br><!--na-->
+        대표사진: <select name="" id="img"><!--img-->
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select><br>
+
+        <input type="button" value="register" id="log"/>
+    </form>
+    <hr>
+    <h1>회원 목록</h1>
+<table class="tableStyle">
+    <thead>
+        <tr>
+            <th>회원번호 </th>
+            <th>이름 </th>
+            <th>이미지 </th>
+        </tr>
+    </thead>
+    <tbody id="tbody">
+        
+    </tbody>
+</table>
+<hr>
+<input type="button" value="회원목록출력하기" id="printA">
+<table id="tableS">
+    <thead>
+        <tr>
+            <th>ID </th>
+            <th>Name </th>
+            <th>Photo </th>
+        </tr>
+    </thead>
+    <div id="tbody1">
+        
+    </div>
+</table>
+
+</body>
+</html>

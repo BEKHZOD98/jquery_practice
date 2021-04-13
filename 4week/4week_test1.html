@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jquery Test</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <script>
+        $( function(){
+            let style1 = {
+                "color":"yellow",
+                "background-color":"red",
+                "border":"2px dashed black"
+            }
+            let obj = [
+                {"area":"서울"},
+                {"area":"부산"},
+                {"area":"전주"}
+            ]
+            
+            $(obj).each(function(i, o){
+                console.log(i + ":" + o.area);
+            });
+            $.each($("#menu1 li"),function(i,o){
+                console.log(i+ ":" + o);
+            });
+            $("#menu1 li").each(function(i,o){
+                console.log(i+ ":" + o);
+            });
+            //shu function o'xshamadi!!
+            $("#menu2 li").each(function(i){
+                console.log(i + ":" + $(this).text());
+            });
+            
+            
+            
+            /*
+            $("#menu1 li:eq(1)").css(style1);
+            $("#menu1 li").eq(3).css(style1);
+            $("#menu2 li").eq(3).css(style1);*/
+        }
+    );
+    
+    </script>
+    <h1>탐샘 선택자</h1>
+    <ul id="menu1">
+        <li>메뉴1-1</li>
+        <li>메뉴1-2</li>
+        <li>메뉴1-3</li>
+        <li>메뉴1-4</li>
+        <li>메뉴1-5</li>
+    </ul>
+    <ul id="menu2">
+        <li>메뉴2-1</li>
+        <li>메뉴2-2</li>
+        <li>메뉴2-3</li>
+        <li>메뉴2-4</li>
+        <li>메뉴2-5</li>
+    </ul>
+</body>
+</html>

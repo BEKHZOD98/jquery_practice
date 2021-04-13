@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jquery Test</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <script>
+        $(document).ready( function(){
+            $("h2").css("border","3px solid blue");
+            $("h2#hd1").css("background-color","skyblue").css("color","red");
+            $("h2.hd3").css(
+            {
+                "background-color": "purple",
+                "color":"yellow",
+                "border":"5px dashed black"
+            }
+            );
+            $("li:even").css("color","red").css("font-weight", "bold");
+            $("li:odd").css("color","yellow").css("font-weight", "bold")
+        }
+    );
+    </script>
+    <h1 class="hd3">스타일 변경하가</h1>
+    <h2 id="hd1">header1</h2>
+    <h2 id="hd2">header2</h2>
+    <h2 class="hd3">header3</h2>
+    <h2 id="hd4">header4</h2>
+    <h2 id="hd5">header5</h2>
+    
+    <hr>
+
+    <ul class="list">
+        <li>list1</li>
+        <li>list2</li>
+        <li>list3</li>
+        <li>list4</li>
+        <li>list5</li>
+    </ul>
+    <br>
+    <hr>
+    <h3 id="h3">body</h3>
+    <h3 id="h3">body</h3>
+    <h3 id="h3">body</h3>
+    <h3 id="h3">body</h3>
+    <hr>
+    <h1>hello world
+    </h1>
+</body>
+</html>

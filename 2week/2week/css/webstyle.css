@@ -1,0 +1,16 @@
+.header{
+    text-align: center;
+    background-color: rgb(255, 255, 0);
+}
+.tableStyle,th,tr{    
+    border:2px solid green;
+    border-collapse: collapse;
+
+}
+#test{
+    color:white;
+    background-color: red;
+}
+#tableS{
+    border: 2px dashed red;
+}

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        label{
+            border:1px solid lightgreen;
+        }
+        body{
+            width: 10000px;
+            height: 10000px;
+        }
+        ul{
+            display:none;
+        }
+    </style>
+    <script>
+        $(function(){
+            $('.btn1').click(function(){
+                $('.txt1').css({background:'red'})
+                
+
+            });
+            $('.btn2').on('click mouseover focus',function(){
+                $(".txt2").css({color:"blue"});
+            });
+            $('.btn3').hover(function(){
+                $('.txt3').css({background:'yellow'});
+            }, function(){
+                $('.txt3').css({background:'white'});
+            });
+            $('.btn1').click();
+
+          /* $('.on').on('click',function(){
+                $(".txt4").css({'font-size':'20px','border':'2px solid green'})
+            });*/
+
+            $(document).on('click','.on',function(){
+                $(".txt4").css({'font-size':'20px','border':'2px solid green'});
+            });
+
+            $('.btn4').addClass('on');
+            $('.btn2').addClass('on');
+
+        });
+        $(document).on("mousemove",function(e){
+            $('#x').text(e.pageX);
+            $('#y').text(e.pageY);
+
+           
+        $('#fo').on('mouseleave',ml)    
+            
+        function ml(){
+            $('#fo').css({'background-color':'yellowgreen',
+                                "border":'2px dashed skyblue'
+                         });
+        }
+////////////////////////////////////
+        $("#fo").on({
+                "mouseover focus": mover,
+                "mouseout blur": mout()
+            });
+
+        function mover(){
+            $("#fo").css({"border":"2px solid red"});
+        }
+        function mout(){
+            $("#fo").removeAttr("style");
+        }
+        $('#sub').on('click',function(e){
+            e.preventDefault();
+        })
+
+
+       /* $('#fo').on(
+            'mouseover': function(){},
+            'mouseout': funtion(),
+        )*/
+
+        
+        ////////////////////////this bu .sel dir e bu event funcni ichidagi
+        $('.sel').on('change',function(){
+            $('.out').text( $(this).val() );//hamma gap val valueda
+            var val = $(this).val();
+            $('ul').css({'display':'none'})
+            if(value == 'kor'){
+                $('.menu1').css({'display':'block'});
+            }
+            else if(value == 'cha'){
+                $('.menu2').css({'display':'block'});
+            }
+        });
+
+        $('.sel').off('change');
+        $(document).keydown(function(e){
+            $('.out').text(e.keyCode);
+        });
+    });
+    </script>
+
+    <script>
+        $(document).ready(function(){
+            var h = $('img').height();
+            console.log(h);
+        });
+
+        $(window).on('load', function(){
+            var h = $('img').height();
+            console.log(h);
+        });
+
+
+    </script>
+
+</head>
+<body>
+    <h2>mouse event</h2>
+    <section class="sec1">
+        <label for="">
+            <input type="button" value="button1" class="btn1">
+                <div class="txt1">text</div>
+            </input>
+        </label>
+        <label for="">
+            <input type="button" value="button2" class="btn2">
+                <div class="txt2">text</div>
+            </input>
+        </label>
+        <label for="">
+            <input type="button" value="button3" class="btn3">
+                <div class="txt3">text</div>
+            </input>
+        </label>
+        <label for="">
+            <input type="button" value="button4" class="btn4 on">
+                <div class="txt4">text</div>
+            </input>
+        </label>
+        <label for="">
+            <input type="button" value="button5" class="btn5">
+                <div class="txt5">text</div>
+            </input>
+        </label>
+    </section>
+
+    <section style="position:fixed; right: 10px; bottom: 10px; border: 3px solid green;">
+        <div class="cordX">X: <span id="x"></span></div>
+        <div class="cordX">Y: <span id="y"></span></div>
+    </section>
+
+    <form id="fo" method="GET" action="https://www.naver.com">
+        <label for="">
+            name: <input type="text" id="name">
+        </label>
+        <label for="">
+            secondName: <input type="text" id="second">
+        </label>
+        <input type="submit" id="sub" value="제출하기"><!--buttonni bosganda back colorni ozgartirib kor-->
+    </form>
+    <hr style="border: 2px solid black"> 
+    <h2>하위 메뉴 보기</h2>
+    <select name="" id="" class="sel">
+        <option value="">종류를 선택하세요.</option>
+        <option value="kor">한식</option>
+        <option value="china">중식</option>
+        <option value="japan">일식</option>
+        <option value="wes">양식</option>
+    </select>
+
+    <ul class="menu1">
+        <li>밥</li>
+        <li>국</li>
+    </ul>
+    <ul class="menu2">
+        <li>짱</li>
+        <li>짜</li>
+    </ul>
+    <ul class="menu3">
+        <li>초</li>
+        <li>우동</li>
+    </ul>
+    <ul class="menu4">
+        <li>스테이크</li>
+        <li>파스타</li>
+    </ul>
+
+    <p class="out"></p>
+    <br>
+    <div><img id="img" src="https://dummyimage.com/100x100/ffff00/000000.jpg&text=habi" width="300" height="500"></div>
+</body>
+
+</html>

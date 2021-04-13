@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--bu yaxshi source code urganib chiq home work-->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jquery Test</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <script>
+        //$(document).ready(function(){});
+        $(function(){
+            $("p").each(function(i,o){
+                if(i==1){
+                    $(o).css("background-color","yellow");
+                }
+            });
+            //$("#sel").text("선택 이것으로 txt 바꾸ㅣ다.")
+            //check
+            console.log( $("").val());
+            //radio
+            $().val("female");
+        });
+    </script>
+    <h1>객체 선택 값 가져오기</h1>
+    <div>
+        <p>test1</p>
+        <p>test2</p> <!--yellow-->
+        <p>test3</p>
+    </div>
+    <form id="form1" method="GET" action="#">
+        <input type="text" value="hello"><br>
+        <input type="button" value="press me!"><br>
+        <select id="sel">
+            <option value="sel1">선택1</option>
+            <option value="sel2">선택2</option>
+            <option value="sel3">선택3</option>
+            <option value="sel4" selected>선택4</option> <!--checked-->
+        </select>
+        <div>
+        <input type="checkbox" value="1">토글 1 <br>
+        <input type="checkbox" value="2" checked>토글 1 <br>
+        <input type="checkbox" value="3" checked>토글 1 <br>
+        <!--console.log(value 출력)-->
+        </div>
+        <div id="radio">
+            <input type="radio" value="male" checked>남성 <br>
+            <input type="radio" value="female">여성<br>
+            <!--female로 바뀌다-->
+        
+        </div>
+    </form>
+</body>
+</html>
